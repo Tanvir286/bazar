@@ -22,8 +22,10 @@ export class UsersController {
     return this.usersService.signIn(userSignIn);
   }
   /*🏳️<===============(Sign Up End)===============>🏳️*/
-   
-
-
-  
+  /*🏳️<===============(All User Get Start)===============>🏳️*/
+  @Get('alluser')
+  async findAll() {
+    return this.usersService.findAll();
+  }
+  /*🏳️<===============(All User Get End)===============>🏳️*/
 }
