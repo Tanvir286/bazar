@@ -91,6 +91,20 @@ export class UsersService {
   /*<========================================>
        🚩       Find All Users End      🚩
   ===========================================>*/
+  /*<========================================>
+       🏳️       Find One Users Start       🏳️
+  ===========================================>*/
+
+  async findOne(id:number ): Promise<UserEntity> {
+    const user = await this.usersRepository.findOne({ where: { id } });
+    if (!user) throw new NotFoundException('User not found');
+    return user;
+  }
+   /*<========================================>
+       🚩       Find All Users End      🚩
+  ===========================================>*/
+
+
 
   async findUserByEmail(email: string) {
     return this.usersRepository.findOne({ where: { email } });

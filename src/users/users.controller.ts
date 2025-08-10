@@ -15,17 +15,23 @@ export class UsersController {
   async signUp(@Body() userSignUp: UserSignUpDto) {
     return this.usersService.signUp(userSignUp);
   }
-  /*🏳️<===============(Sign Up End)===============>🏳️*/
+  /*🚩<===============(Sign Up End)===============>🚩*/
   /*🏳️<===============(Sign In Start)===============>🏳️*/
   @Post('signin')
   async signIn(@Body() userSignIn: UserSignInDto) {
     return this.usersService.signIn(userSignIn);
   }
-  /*🏳️<===============(Sign Up End)===============>🏳️*/
+  /*🚩<===============(Sign Up End)===============>🚩*/
   /*🏳️<===============(All User Get Start)===============>🏳️*/
   @Get('alluser')
   async findAll() {
     return this.usersService.findAll();
   }
-  /*🏳️<===============(All User Get End)===============>🏳️*/
+  /*🚩<===============(All User Get End)===============>🚩*/
+  /*🏳️<===============(single User Get Start)===============>🏳️*/
+  @Get('singleuser/:id')
+  async findOne(@Param('id') id: string) {
+    return this.usersService.findOne(+id);
+  }
+  /*🚩<===============(single User Get End)===============>🚩*/
 }
