@@ -6,7 +6,7 @@ import { UsersModule } from './users/users.module';
 
 @Module({
   imports: [
-    ConfigModule.forRoot({ isGlobal: true }), // ConfigModule এখানে যোগ করতে হবে
+    ConfigModule.forRoot({  isGlobal: true }), // ConfigModule এখানে যোগ করতে হবে
     TypeOrmModule.forRoot(dataSourceOptions), 
     UsersModule],
 
